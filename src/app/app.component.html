@@ -1,0 +1,34 @@
+<ion-app>
+
+  <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-title>Menu</ion-title>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-menu-toggle auto-hide="false">
+        <ion-list>
+          <ion-item routerLink="home">Calculator (Home)
+            <ion-icon slot="start" size="small" name="calculator"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="orientation">Landscape Mode
+            <ion-icon slot="start" name="phone-landscape" size="small"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="calclog">History
+            <ion-icon slot="start" name="time" size="small"></ion-icon>
+          </ion-item>
+          <ion-item routerLink="customizecalc">Customize
+            <ion-icon slot="start" name="construct" size="small"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+</ion-app>
