@@ -15,7 +15,7 @@ export class OrientationPage implements OnInit {
   constructor(private screenOrientation: ScreenOrientation) {
     // Find screen current orientation
     console.log(this.screenOrientation.type);
-    this.activeScreenOrt = screen.orientation.type; 
+    this.activeScreenOrt = this.screenOrientation.type; 
     
     this.screenOrientation.onChange().subscribe(
       () => {
