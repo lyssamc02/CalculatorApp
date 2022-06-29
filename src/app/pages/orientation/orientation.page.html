@@ -3,9 +3,21 @@
     <ion-buttons slot="start">
      <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-title>Orientation</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content [fullscreen]="true">
+   <div id="container">
+      Current Screen Orientation: <strong>{{this.activeScreenOrt}}</strong>
+  
+      <!--<ion-button (click)="getCurrentOrientation()">Get Current Orientation</ion-button> -->
+
+      <ion-button (click)="lockScreenOrientationPortrait()">Adjust to Portrait Mode</ion-button>
+    
+      <ion-button (click)="lockScreenOrientationLandscape()">Adjust to Landscape Mode</ion-button>
+    
+      <ion-button (click)="unlockSo()">Unlock Screen Orientation</ion-button>
+    </div>
 </ion-content>
