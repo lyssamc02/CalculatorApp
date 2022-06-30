@@ -1,10 +1,11 @@
+import { DataResolverService } from './resolver/data-resolver.service';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,15 +14,20 @@ const routes: Routes = [
   },
   {
     path: 'calclog',
-    loadChildren: () => import('./pages/calclog/calclog.module').then( m => m.CalclogPageModule)
+    loadChildren: () => import('./pages/calclog/calclog.module').then(m => m.CalclogPageModule)
+  }, 
+  {
+    path: 'calclog/:id',
+    resolve: { myData: DataResolverService },
+    loadChildren: () => import('./pages/calclog/calclog.module').then(m => m.CalclogPageModule)
   },
   {
     path: 'customizecalc',
-    loadChildren: () => import('./pages/customizecalc/customizecalc.module').then( m => m.CustomizecalcPageModule)
+    loadChildren: () => import('./pages/customizecalc/customizecalc.module').then(m => m.CustomizecalcPageModule)
   },
   {
     path: 'orientation',
-    loadChildren: () => import('./pages/orientation/orientation.module').then( m => m.OrientationPageModule)
+    loadChildren: () => import('./pages/orientation/orientation.module').then(m => m.OrientationPageModule)
   },
 
 ];

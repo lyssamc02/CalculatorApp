@@ -26,6 +26,11 @@
     text-decoration: none;
   }
 
+  .bg-color {
+    background: var(--ion-color-secondary);
+    height: 100%;
+}
+
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     html {
         transform: rotate(-90deg);

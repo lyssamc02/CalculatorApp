@@ -8,5 +8,14 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="bg-color">
+<ion-card>
+  <ion-card-header>
+    Calculation Logs
+  </ion-card-header>
+  <ion-list *ngFor='let d of data'>
+   {{d}}
+  </ion-list>
+</ion-card>
+</div>
 </ion-content>

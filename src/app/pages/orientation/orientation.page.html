@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-     <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Orientation</ion-title>
   </ion-toolbar>
@@ -9,15 +9,17 @@
 
 
 <ion-content [fullscreen]="true">
-   <div id="container">
+  <div class="bg-color">
+    <div id="container">
       Current Screen Orientation: <strong>{{this.activeScreenOrt}}</strong>
-  
+
       <!--<ion-button (click)="getCurrentOrientation()">Get Current Orientation</ion-button> -->
 
-      <ion-button (click)="lockScreenOrientationPortrait()">Adjust to Portrait Mode</ion-button>
-    
-      <ion-button (click)="lockScreenOrientationLandscape()">Adjust to Landscape Mode</ion-button>
-    
-      <ion-button (click)="unlockSo()">Unlock Screen Orientation</ion-button>
+      <ion-button style="max-width: 91%;" (click)="lockScreenOrientationPortrait()">Adjust to Portrait Mode</ion-button>
+
+      <ion-button style="max-width: 91%;" (click)="lockScreenOrientationLandscape()">Adjust to Landscape Mode</ion-button>
+
+      <ion-button style="max-width: 91%;" (click)="unlockSo()">Unlock Screen Orientation</ion-button>
     </div>
+  </div>
 </ion-content>

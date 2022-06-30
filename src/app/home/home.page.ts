@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +15,15 @@ export class HomePage {
   newcursor = false;          //checks if the operand in the left or right
   isc = false;                //var check if the clean button is "C" or "AC"
   isdot = false;              //var to check if the number contains dot/point
-  inputForLog = [];           //an array that keeps track of what was entered for a calculation
+  data = [];           //an array that keeps track of what was entered for a calculation
+  logstring: any;
 
-  constructor() {}
+  constructor(private router: Router, private dataService: DataService) {}
+
+  passData() {
+    this.dataService.setData(1, this.data);
+    this.router.navigateByUrl('/calclog/1');
+  }
 
   click(val: any) {
     switch (val) {
@@ -223,6 +231,7 @@ export class HomePage {
         break;
     }
     this.display = this.firstval.toString();
+    this.data.push(this.firstval);
   }
 
 }

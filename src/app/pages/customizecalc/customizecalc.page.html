@@ -7,8 +7,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-buttons>
-   <button ion-button expand="full" color="success">Green Theme</ion-item>
-  </ion-buttons>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <div class="ion-margin-bottom">
+      <ion-list-header color="medium">
+        <ion-label>Select Theme</ion-label>
+      </ion-list-header>
+
+      <div class="bg-color">
+      <ion-select color="light" class="selectTheme" [interfaceOptions]="customPopoverOptions" interface="popover"
+        [(ngModel)]="selectTheme" (ionChange)="dynamicTheme()">
+        <ion-select-option color="light" [value]="theme.class" *ngFor="let theme of themeColor;let i = indexs">
+          {{theme.name}}
+        </ion-select-option>
+      </ion-select>
+      </div>
+    </div>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-calclog',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalclogPage implements OnInit {
 
-  constructor() { }
+  data;
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(info => {
+      if (info && info.myData) {
+        this.data = this.route.snapshot.data['myData']
+      }
+    });
   }
 
+  ngOnInit() {
+    if (this.route.snapshot.data['myData']) {
+      this.data = this.route.snapshot.data['myData'];
+    }
+  }
 }
